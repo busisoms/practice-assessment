@@ -47,20 +47,6 @@ class TestPracticeAssessment(unittest.TestCase):
 
 # ---------------------------------------------------------------------------------------------------------- #
 
-    def test_validate_password_valid(self):
-        self.assertTrue(validate_password("Secure123!"))
-        self.assertTrue(validate_password("P@ssw0rd"))
-    
-    def test_validate_password_invalid(self):
-        self.assertFalse(validate_password("weak"))
-        self.assertFalse(validate_password("NoNumbers!"))
-        self.assertFalse(validate_password("nouppercas3!"))
-        self.assertFalse(validate_password("NOLOWERCASE3!"))
-        self.assertFalse(validate_password("NoSpecial123"))
-    
-    
-# ---------------------------------------------------------------------------------------------------------- #
-
     def test_transpose_matrix(self):
         result = transpose_matrix([[1, 2, 3], [4, 5, 6]])
         self.assertEqual(result, [[1, 4], [2, 5], [3, 6]])
@@ -68,16 +54,6 @@ class TestPracticeAssessment(unittest.TestCase):
     def test_transpose_matrix_square(self):
         result = transpose_matrix([[1, 2], [3, 4]])
         self.assertEqual(result, [[1, 3], [2, 4]])
-    
-# ---------------------------------------------------------------------------------------------------------- #
-
-    def test_remove_duplicates_preserve_order(self):
-        result = remove_duplicates_preserve_order([1, 2, 2, 3, 1, 4])
-        self.assertEqual(result, [1, 2, 3, 4])
-    
-    def test_remove_duplicates_strings(self):
-        result = remove_duplicates_preserve_order(['a', 'b', 'a', 'c'])
-        self.assertEqual(result, ['a', 'b', 'c'])
     
 # ---------------------------------------------------------------------------------------------------------- #
 
@@ -91,8 +67,8 @@ class TestPracticeAssessment(unittest.TestCase):
         }
         result = calculate_final_grades(students)
         self.assertAlmostEqual(result['Alice'], 88.0, places=1)
-
-  # ---------------------------------------------------------------------------------------------------------- #
+    
+# ---------------------------------------------------------------------------------------------------------- #
 
     def test_word_frequency(self):
         result = word_frequency("The cat and the dog. The cat!", 2)
@@ -102,6 +78,29 @@ class TestPracticeAssessment(unittest.TestCase):
         result = word_frequency("Hello hello HELLO", 1)
         self.assertEqual(result, [('hello', 3)])
     
+  # ---------------------------------------------------------------------------------------------------------- #
+    
+    def test_remove_duplicates_preserve_order(self):
+        result = remove_duplicates_preserve_order([1, 2, 2, 3, 1, 4])
+        self.assertEqual(result, [1, 2, 3, 4])
+    
+    def test_remove_duplicates_strings(self):
+        result = remove_duplicates_preserve_order(['a', 'b', 'a', 'c'])
+        self.assertEqual(result, ['a', 'b', 'c'])
+
+# ---------------------------------------------------------------------------------------------------------- #
+
+    def test_validate_password_valid(self):
+        self.assertTrue(validate_password("Secure123!"))
+        self.assertTrue(validate_password("P@ssw0rd"))
+    
+    def test_validate_password_invalid(self):
+        self.assertFalse(validate_password("weak"))
+        self.assertFalse(validate_password("NoNumbers!"))
+        self.assertFalse(validate_password("nouppercas3!"))
+        self.assertFalse(validate_password("NOLOWERCASE3!"))
+        self.assertFalse(validate_password("NoSpecial123"))
+
 # ---------------------------------------------------------------------------------------------------------- #
 
     def test_generate_primes(self):
