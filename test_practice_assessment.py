@@ -88,7 +88,7 @@ class TestPracticeAssessment(unittest.TestCase):
         
         # Check overlap items
         self.assertEqual(result['item_500'], 1500)  # 500 + 1000
-        self.assertEqual(result['item_999'], 2998)  # 999 + 1998
+        self.assertEqual(result['item_999'], 2997)  # 999 + 1998
         # Check unique items
         self.assertEqual(result['item_0'], 0)
         self.assertEqual(result['item_1499'], 2998)
